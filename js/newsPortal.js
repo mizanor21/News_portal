@@ -7,13 +7,12 @@ const loadCategory = () => {
 const displayCategory = categorys => {
     const categorysContainer = document.getElementById('categoy_container');
     for (const category of categorys) {
-        // console.log(category.category_name)
-        const caregoryList = document.createElement('ul');
-        caregoryList.classList.add('items')
-        caregoryList.innerHTML = `
-            <li>${category.category_name}</li>
+        const categoryList = document.createElement('li');
+        categoryList.classList.add('nav-item');
+        categoryList.innerHTML = `
+            <a class="nav-link active" href="#">${category.category_name}</a>
         `;
-        categorysContainer.appendChild(caregoryList);
+        categorysContainer.appendChild(categoryList);
     }
 
 
