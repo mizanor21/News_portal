@@ -8,9 +8,9 @@ const displayCategory = categorys => {
     const categorysContainer = document.getElementById('categoy_container');
     for (const category of categorys) {
         const categoryList = document.createElement('li');
-        categoryList.classList.add('nav-item');
+        categoryList.classList.add('nav-item', 'mx-2');
         categoryList.innerHTML = `
-            <a class="nav-link active" href="#">${category.category_name}</a>
+            <a class="nav-link fs-5" href="#">${category.category_name}</a>
         `;
         categorysContainer.appendChild(categoryList);
     }
