@@ -20,3 +20,7 @@ main .card-body .card-text {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+
+#author img {
+    width: 50px;
+}

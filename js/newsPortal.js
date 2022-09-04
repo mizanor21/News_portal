@@ -30,7 +30,7 @@ const loadNews = () => {
 const displayNews = newses => {
     const mainContainer = document.getElementById('main_container');
     for (news of newses) {
-        console.log(news);
+        // console.log(news);
         const mainDiv = document.createElement('div');
         mainDiv.innerHTML = `
             <div class="card mb-3" style="max-width: 100%;">
@@ -44,33 +44,39 @@ const displayNews = newses => {
                             <p class="card-text text-muted">${news.details}</p>
                         </div>
                         <div class="mt-4">
-                            <div class="d-flex">
-                                <img class="w-25" src="${news.author.img}" alt="Image Not Found">
-                                <div class="ms-3">
-                                    <h5>${news.author.name}</h5>
-                                    <p class="text-muted">${news.author.published_date}</p>
+                            <div class="d-flex justify-content-between mt-5">
+                                <div class="d-flex">
+                                    <div id="author" class="ms-3">
+                                        <img class="rounded-circle" src="${news.author.img}" alt="Image Not Found">
+                                    </div>
+                                    <div class="ms-3">
+                                        <h5>${news.author.name}</h5>
+                                        <p class="text-muted">${news.author.published_date}</p>
+                                    </div>
                                 </div>
                                 <div>
                                     <h4><i class="fa-regular fa-eye"></i> ${news.total_view}</h4>
                                 </div>
                                 <!--modal -->
-                                <div>
+                                <div id=""modal>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Read More <i class="fa-sharp fa-solid fa-arrow-right"></i>
                                     </button>
 
-                                    <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-xl">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-xl">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">${news.title}</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">ABC News</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
+                                            <div class="">
+                                                <img src="${news.image_url}" class="img-fluid w-100 rounded-start" alt="Image Not Found!">
+                                            </div>
                                             <div class="card-body">
                                                 <h5 class="card-title my-4">${news.title}</h5>
-                                                <p class="card-text text-muted">${news.details}</p>
+                                                <p class="text-muted">${news.details}</p>
                                             </div>
                                                 <div class="mt-4">
                                                     <div class="d-flex">
@@ -87,7 +93,6 @@ const displayNews = newses => {
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
                                         </div>
                                         </div>
                                     </div>
@@ -103,4 +108,5 @@ const displayNews = newses => {
         mainContainer.appendChild(mainDiv);
     }
 }
+
 loadNews();
