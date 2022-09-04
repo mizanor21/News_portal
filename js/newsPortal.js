@@ -46,13 +46,54 @@ const displayNews = newses => {
                         <div class="mt-4">
                             <div class="d-flex">
                                 <img class="w-25" src="${news.author.img}" alt="Image Not Found">
-                                <div class="mt-4 ms-3">
+                                <div class="ms-3">
                                     <h5>${news.author.name}</h5>
                                     <p class="text-muted">${news.author.published_date}</p>
                                 </div>
                                 <div>
-                                    <h4></h4>
+                                    <h4><i class="fa-regular fa-eye"></i> ${news.total_view}</h4>
                                 </div>
+                                <!--modal -->
+                                <div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Read More <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">${news.title}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card-body">
+                                                <h5 class="card-title my-4">${news.title}</h5>
+                                                <p class="card-text text-muted">${news.details}</p>
+                                            </div>
+                                                <div class="mt-4">
+                                                    <div class="d-flex">
+                                                        <img class="w-25" src="${news.author.img}" alt="Image Not Found">
+                                                        <div class="ms-3">
+                                                            <h5>${news.author.name}</h5>
+                                                            <p class="text-muted">${news.author.published_date}</p>
+                                                        </div>
+                                                        <div>
+                                                            <h4><i class="fa-regular fa-eye"></i> ${news.total_view}</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
