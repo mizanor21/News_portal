@@ -12,6 +12,14 @@ hr {
     opacity: .25;
 }
 
+#btn_category {
+    background-color: rgb(230, 231, 231);
+}
+
+#btn_category:hover {
+    background-color: tomato;
+    border-radius: 10px;
+}
 
 main .card-body .card-text {
     width: 100%;
@@ -19,6 +27,10 @@ main .card-body .card-text {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+
+#main_container {
+    min-height: 65vh;
 }
 
 #author img {

@@ -10,7 +10,8 @@ const displayCategory = categorys => {
         const categoryList = document.createElement('li');
         categoryList.classList.add('nav-item', 'mx-2');
         categoryList.innerHTML = `
-            <a class="nav-link fs-5" href="#">${category.category_name}</a>
+            
+            <button class="nav-link fs-5 border border-0" id="btn_category">${category.category_name}</button>
         `;
         categorysContainer.appendChild(categoryList);
     }
@@ -19,6 +20,25 @@ const displayCategory = categorys => {
 }
 
 loadCategory();
+// Total News Area start 
+const totalNews = () => {
+    fetch('https://openapi.programming-hero.com/api/news/category/01')
+        .then(Response => Response.json())
+        .then(data => displayTotalNews(data.data))
+
+}
+const displayTotalNews = totalNews => {
+    // console.log(totalNews.length);
+    const totalNewsContainer = document.getElementById('total_News');
+    const totalNewsDiv = document.createElement('div');
+    totalNewsDiv.innerHTML = `
+        <div class="container py-1 bg-light">
+            <p class="fs-5">${totalNews.length} items found for category All News</p>
+        </div>
+    `;
+    totalNewsContainer.appendChild(totalNewsDiv);
+}
+totalNews();
 
 // main area start 
 const loadNews = () => {
