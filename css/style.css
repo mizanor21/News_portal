@@ -11,3 +11,12 @@ hr {
     border-top: 1px solid;
     opacity: .25;
 }
+
+
+main .card-body .card-text {
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
