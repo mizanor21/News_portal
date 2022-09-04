@@ -57,10 +57,16 @@ const displayNews = newses => {
                                 <div>
                                     <h4><i class="fa-regular fa-eye"></i> ${news.total_view}</h4>
                                 </div>
+                                <div>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
                                 <!--modal -->
-                                <div id=""modal>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Read More <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                                <div id="modal" class="me-3">
+                                    <button type="button" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-sharp fa-solid fa-arrow-right"></i>
                                     </button>
 
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -79,16 +85,27 @@ const displayNews = newses => {
                                                 <p class="text-muted">${news.details}</p>
                                             </div>
                                                 <div class="mt-4">
-                                                    <div class="d-flex">
-                                                        <img class="w-25" src="${news.author.img}" alt="Image Not Found">
-                                                        <div class="ms-3">
-                                                            <h5>${news.author.name}</h5>
-                                                            <p class="text-muted">${news.author.published_date}</p>
-                                                        </div>
-                                                        <div>
-                                                            <h4><i class="fa-regular fa-eye"></i> ${news.total_view}</h4>
-                                                        </div>
-                                                    </div>
+                                                    <div class="d-flex justify-content-between mt-5">
+                                <div class="d-flex">
+                                    <div id="author" class="ms-3">
+                                        <img class="rounded-circle" src="${news.author.img}" alt="Image Not Found">
+                                    </div>
+                                    <div class="ms-3">
+                                        <h5>${news.author.name}</h5>
+                                        <p class="text-muted">${news.author.published_date}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4><i class="fa-regular fa-eye"></i> ${news.total_view}</h4>
+                                </div>
+                                <div>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-sharp fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                </div>
                                                 </div>
                                         </div>
                                         <div class="modal-footer">
