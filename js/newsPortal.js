@@ -5,12 +5,12 @@ const loadCategory = () => {
 }
 
 const displayCategory = categorys => {
+    loadNews();
     const categorysContainer = document.getElementById('categoy_container');
     for (const category of categorys) {
         const categoryList = document.createElement('li');
         categoryList.classList.add('nav-item', 'mx-2');
         categoryList.innerHTML = `
-            
             <button class="nav-link fs-5 border border-0" id="btn_category">${category.category_name}</button>
         `;
         categorysContainer.appendChild(categoryList);
@@ -146,4 +146,14 @@ const displayNews = newses => {
     }
 }
 
-loadNews();
+// loadNews();
+
+//Blog Part start
+const blog = () => {
+    const mainContainer = document.getElementById('main_container');
+    const mainDiv = document.createElement('div');
+    mainDiv.innerHTML = `
+        <h1>Mizanor Rahman, In sha Allah ekjon top level web developer hobe!</h1>
+    `;
+    mainContainer.appendChild(mainDiv);
+}
